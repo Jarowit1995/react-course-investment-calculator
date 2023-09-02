@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import classes from './UserInput.module.css';
 
 const initialUserInput = {
   'current-savings': 10000,
@@ -11,7 +12,6 @@ const UserInput = (props) => {
   const [userInput, setUserInput] = useState(initialUserInput);
   const submitHandler = (event) => {
     event.preventDefault();
-    console.log('submit');
     props.onCalculate(userInput);
   };
 
@@ -21,7 +21,6 @@ const UserInput = (props) => {
   };
 
   const inputChangeHandler = (input, value) => {
-    console.log(input, value);
     setUserInput((prevInput) => {
       return {
         ...prevInput,
